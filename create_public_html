@@ -1,0 +1,12 @@
+<?php
+
+if(file_exists('public_html') || is_dir('public_html')){
+  echo 'Can\'t create symlink: `public_html` already exists';
+  die;
+}
+
+echo 'Creating symlink: ';
+
+echo symlink('public', 'public_html') ? 'SUCCESS' : 'FAILED';
+
+?>
