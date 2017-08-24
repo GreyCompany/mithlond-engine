@@ -13,7 +13,40 @@
   </head>
   <body>
     <div id="app">
-      <h1>Placeholder</h1>
+      <header>
+        <div class="page-header">
+          <h1>Mithlond Engine</h1>
+          <h2>Czy odważysz się wypłynąć</h2>
+        </div>
+        <nav>
+          <div class="container">
+            <ul class="left hide-on-med-and-down">
+              <li class="active"><a href="#">O grze</a></li>
+              <li><a href="#">Autorzy</a></li>
+              <li><a href="#">Regulamin</a></li>
+              <li><a href="#">Kontakt</a></li>
+            </ul>
+            <ul class="right">
+              <li><a href="#">Logowanie</a></li>
+              <li><a href="#">Rejestracja</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <main class="container">
+        <article class="card">
+          <div class="card-content white-text">
+            <span class="card-title">Czym jest Mithlond Engine?</span>
+            <p>Na pewno nie paczką cukierków.</p>
+          </div>
+        </article>
+      </main>
+      <footer class="page-footer">
+        <div class="container"></div>
+        <div class="footer-copyright">
+          <div class="container">&copy; 2017 <a href="#">GreyCompany</a></div>
+        </div>
+      </footer>
     </div>
 
     <script src="{{ asset('js/vendor.js') }}"></script>

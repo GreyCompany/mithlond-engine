@@ -1,0 +1,11 @@
+
+$primary-color: color("blue-grey", "darken-4");
+$background-color: lighten($primary-color, 2.5);
+$primary-text-color: #fff;
+$primary-color-dark: darken($primary-color, 2.5);
+
+$card-bg-color: color("blue-grey", "darken-3");
+
+$footer-font-color: $primary-text-color;
+$footer-copyright-font-color: rgba($primary-text-color,.8) !default;
+$footer-copyright-bg-color: $primary-color-dark;
