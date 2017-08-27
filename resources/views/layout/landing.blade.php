@@ -27,19 +27,16 @@
               <li><a href="#">Kontakt</a></li>
             </ul>
             <ul class="right">
-              <li><a href="#">Logowanie</a></li>
-              <li><a href="#">Rejestracja</a></li>
+              <li><a href="/login">Logowanie</a></li>
+              <li><a href="/register">Rejestracja</a></li>
             </ul>
           </div>
         </nav>
       </header>
       <main class="container">
-        <article class="card">
-          <div class="card-content white-text">
-            <span class="card-title">Czym jest Mithlond Engine?</span>
-            <p>Na pewno nie paczką cukierków.</p>
-          </div>
-        </article>
+        <div class="row">
+          @yield('content')
+        </div>
       </main>
       <footer class="page-footer">
         <div class="container"></div>
