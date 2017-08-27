@@ -21,32 +21,27 @@ body {
   }
 }
 
-header {
+header.page-header {
   background-image: url('/images/banner.jpg');
   background-size: cover;
 
-  .page-header{
+   div{
     @extend .container;
-
 
     text-align: right;
     margin: {
       top: 4rem;
       bottom: 2.5rem;
     }
-
-    h1 {
-      font-size: $h2-fontsize;
-      line-height: 100%;
-      margin: 0 0 0.2rem;
-    }
-    h2 {
-      font-size: $h4-fontsize;
-      line-height: 100%;
-      margin: 0;
-    }
   }
 
 }
 
-@import 'navbar';
+/**
+ * Tweaks and fixes for default materialize-css settings
+ */
+
+@import "navbar";
+@import "typography";
+@import "cards";
+@import "forms";

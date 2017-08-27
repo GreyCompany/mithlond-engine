@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('layout.master');
-});
+Route::redirect('/', '/about');
+
+Route::view('/about', 'home')->name('landing.about');
 
 Auth::routes();
 

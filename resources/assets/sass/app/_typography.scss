@@ -1,0 +1,23 @@
+.page-header{
+  h1, h2{
+    text-shadow: 0.15rem 0.15rem 0.2rem rgba(0,0,0, 0.87), -0.15rem -0.15rem 0.5rem rgba(0,0,0, 0.2);
+  }
+  h1 {
+    line-height: 100%;
+    margin: 0 0 0.2rem;
+  }
+  h2 {
+    font-size: $h4-fontsize;
+    line-height: 100%;
+    margin: 0;
+  }
+}
+
+.card-title{
+  h1,h2,h3,h4,h5,h6{
+    @extend .card-title;
+
+    margin: 0;
+    padding: 0;
+  }
+}
