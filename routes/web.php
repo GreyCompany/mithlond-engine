@@ -17,6 +17,6 @@ Route::middleware(['guest'])->group(function(){
     return redirect()->route('landing.about');
   })->name('home');
 
-  Route::view('/about', 'home')->name('landing.about');
+  Route::view('/about', 'landing.about')->name('landing.about');
   Route::get('/rules', 'RulesController@index')->name('landing.rules');
 });
