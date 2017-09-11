@@ -1,20 +1,33 @@
-<header class="page-header">
-  <div>
-    <h1>Mithlond Engine</h1>
-    <h2>Czy odważysz się wypłynąć?</h2>
-  </div>
-  <nav>
-    <div class="container" v-active-link.exact="['li']">
-      <ul class="left hide-on-med-and-down">
-        <li><a href="{{ route('landing.about') }}">O grze</a></li>
-        <li><a href="#">Autorzy</a></li>
-        <li><a href="{{ route('landing.rules') }}">Regulamin</a></li>
-        <li><a href="#">Kontakt</a></li>
-      </ul>
-      <ul class="right">
-        <li><a href="{{ route('login') }}">Logowanie</a></li>
-        <li><a href="{{ route('register') }}">Rejestracja</a></li>
-      </ul>
-    </div>
-  </nav>
-</header>
+<section>
+  <v-parallax :src="scaledImageLink('banner.jpg')" height="300">
+    <v-layout
+        column
+        align-center
+        justify-center
+        class="white--text"
+    >
+      <h1 class="white--text mb-2 display-3">Mithlond Engine</h1>
+      <div class="headline mb-3 text-xs-center">Czy odważysz się wypłynąć?</div>
+    </v-layout>
+    <v-toolbar>
+      <v-toolbar-side-icon class="hidden-md-and-up"></v-toolbar-side-icon>
+      <v-toolbar-items class="hidden-sm-and-down">
+        <v-btn class="flat transparent elevation-0" href="{{ route('landing.about') }}">O grze</v-btn>
+        <v-btn class="flat transparent elevation-0" href="#">Autorzy</v-btn>
+        <v-btn class="flat transparent elevation-0" href="{{ route('landing.rules') }}">Regulamin</v-btn>
+        <v-btn class="flat transparent elevation-0" href="#">Kontakt</v-btn>
+      </v-toolbar-items>
+      <v-spacer></v-spacer>
+      <v-toolbar-items>
+        <v-btn class="flat transparent elevation-0" href="{{ route('login') }}">
+          <v-icon>mdi-account-key</v-icon>
+          <span class="icon--right hidden-md-and-down">Logowanie</span>
+        </v-btn>
+        <v-btn class="flat transparent elevation-0" href="{{ route('register') }}">
+          <v-icon>mdi-account-plus</v-icon>
+          <span class="icon--right hidden-md-and-down">Rejestracja</span>
+        </v-btn>
+      </v-toolbar-items>
+    </v-toolbar>
+  </v-parallax>
+</section>

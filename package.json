@@ -12,9 +12,11 @@
   "devDependencies": {
     "axios": "^0.16.2",
     "cross-env": "^5.0.1",
-    "jquery": "^3.1.1",
     "laravel-mix": "^1.0",
-    "materialize-css": "^0.100.1",
-    "vue": "^2.1.10"
+    "mdi": "^2.0.46",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
+    "vue": "^2.1.10",
+    "vuetify": "^0.15.3"
   }
 }

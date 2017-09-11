@@ -12,10 +12,10 @@ let path = require('path')
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
+mix.js('resources/assets/js/landing.js', 'public/js')
   .js('resources/assets/js/vendor.js', 'public/js')
-  .sass('resources/assets/sass/app.scss', 'public/css')
-  .sourceMaps(true)
+  .stylus('resources/assets/stylus/landing.styl', 'public/css')
+  .sourceMaps()
   .webpackConfig({
     resolve: {
       modules: [

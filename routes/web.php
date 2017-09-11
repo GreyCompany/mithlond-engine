@@ -20,3 +20,10 @@ Route::middleware(['guest'])->group(function(){
   Route::view('/about', 'landing.about')->name('landing.about');
   Route::get('/rules', 'RulesController@index')->name('landing.rules');
 });
+
+Route::get('/autosize-image/{width}-{image}', function($width, $image){
+  dd($width);
+})->where([
+  'width' => '[0-9]+',
+  'image' => '[0-9a-zA-Z]+'
+]);

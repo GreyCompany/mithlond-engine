@@ -1,10 +1,8 @@
 import Vue from 'vue'
+import Vuetify from 'vuetify'
 import axios from 'axios'
-import jQuery from 'jquery'
 
-window.jQuery = window.$ = jQuery
-require('materialize-css/dist/js/materialize.min.js')
-
+Vue.use(Vuetify)
 window.Vue = Vue
 
 window.axios = axios

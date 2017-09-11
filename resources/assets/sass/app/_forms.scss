@@ -1,7 +1,0 @@
-
-// checkbox issue fix
-[type="checkbox"], [type="radio"] {
-  + label {
-    pointer-events: auto;
-  }
-}
