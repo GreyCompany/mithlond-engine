@@ -28,6 +28,6 @@ class User extends Authenticatable
     ];
 
     public function Characters(){
-        $this->hasMany('App\Character', 'user_id');
+        return $this->hasMany('App\Character', 'user_id');
     }
 }
