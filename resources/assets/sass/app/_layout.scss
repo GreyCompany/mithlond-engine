@@ -1,0 +1,52 @@
+html {
+  background-color: $background-color;
+  color: rgba($primary-text-color, 0.87);
+}
+
+body {
+  min-height: 100vh;
+
+  #app {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+
+    main {
+      flex: 1 0 auto;
+      padding: {
+        top: 1rem;
+        bottom: 1rem;
+      }
+    }
+  }
+}
+
+header {
+  background-image: url('/images/banner.jpg');
+  background-size: cover;
+
+  .page-header{
+    @extend .container;
+
+
+    text-align: right;
+    margin: {
+      top: 4rem;
+      bottom: 2.5rem;
+    }
+
+    h1 {
+      font-size: $h2-fontsize;
+      line-height: 100%;
+      margin: 0 0 0.2rem;
+    }
+    h2 {
+      font-size: $h4-fontsize;
+      line-height: 100%;
+      margin: 0;
+    }
+  }
+
+}
+
+@import 'navbar';
