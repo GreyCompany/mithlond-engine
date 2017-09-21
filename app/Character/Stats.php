@@ -53,7 +53,7 @@ class Stats extends Model
     }
 
     public function getDistanceWeaponAttribute(){
-        return $this->bigStatCalc($this->StandardWeapon, $this->perception);
+        return $this->bigStatCalc($this->standard_weapon, $this->perception);
     }
     
     public function getDodgeAttribute(){
@@ -61,11 +61,11 @@ class Stats extends Model
     }
 
     public function getBlockAttribute(){
-        return statRound(((($this->stamina + $this->strength )*2)+$this->agility)/5);
+        return statRound((($this->stamina + $this->strength ) * 2 + $this->agility)/5);
     }
 
     public function getParryAttribute(){
-        return statRound((($this->stamina * 2)+ $this->quickness + $this->dexterity)/4);
+        return statRound(($this->stamina * 2 + $this->quickness + $this->dexterity)/4);
     }
 
     // HELPERS
@@ -75,7 +75,7 @@ class Stats extends Model
     }
 
     protected function fightStatCalc($stat1, $stat2){
-        return statRound((($stat1 *2)+ $stat2)/3);
+        return statRound(($stat1 * 2 + $stat2)/3);
     }
     
     protected function statRound($stat){
