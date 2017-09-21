@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Character extends Model
 {
+
+    // RELATIONSHIP
     public function player(){
         return $this->belongsTo('App/User');
     }
@@ -20,5 +22,21 @@ class Character extends Model
 
     public function CharacterStats(){
         return $this->hasOne('App/Character/Stats', 'Character_id');
+    }
+
+
+    // 
+
+    public function addExp($amount){
+        $this->experience += $amount;
+        $this->save();
+    }
+
+    public function spendExp($amount){
+        if ($this->experience>$amount){
+            $this->experience -= $amount;
+            $this->save();
+            return true;
+        }
     }
 }
