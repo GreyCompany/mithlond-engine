@@ -25,12 +25,10 @@ class CreateCharactersTable extends Migration
             $table->unsignedInteger('experience');
             $table->unsignedSmallInteger('race');
             $table->foreign('race')
-            ->references('id')->on('races')
-            ->onDelete('cascade');
+            ->references('id')->on('races');
             $table->unsignedSmallInteger('profession');
             $table->foreign('profession')
-            ->references('id')->on('professions')
-            ->onDelete('cascade');
+            ->references('id')->on('professions');
             $table->timestamps();
         });
     }
