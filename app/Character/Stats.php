@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Stats extends Model
 {
-    protected $guarded = ['Id', 'Character_id'];
+    protected $guarded = ['id', 'character_id'];
 
 
     // RELATIONSHIP
@@ -20,61 +20,65 @@ class Stats extends Model
     // BIG STATS
 
 
-    public function toughness(){
-        return $this->bigStatCalc($this->Strength, $this->Stamina);
+    public function getToughnessAttribute(){
+        return $this->bigStatCalc($this->strength, $this->stamina);
     }
 
-    public function agility(){
-        return $this->bigStatCalc($this->Quickness, $this->Dexterity);
+    public function getAgilityAttribute(){
+        return $this->bigStatCalc($this->quickness, $this->dexterity);
     }
 
-    public function mind(){
-        return $this->bigStatCalc($this->Intelligence, $this->Willpower);
+    public function getMindAttribute(){
+        return $this->bigStatCalc($this->intelligence, $this->willpower);
     }
 
-    public function perception(){
-        return $this->bigStatCalc($this->Perceptiveness, $this->Acumen);
+    public function getPerceptionAttribute(){
+        return $this->bigStatCalc($this->perceptiveness, $this->acumen);
     }
 
 
     // COMBAT
 
 
-    public function standardWeapon(){
-        return $this->bigStatCalc($this->toughness(), $this->agility());
+    public function getStandardWeaponAttribute(){
+        return $this->bigStatCalc($this->toughness, $this->agility);
     }
 
-    public function heavyWeapon(){
-        return $this->fightStatCalc($this->toughness(), $this->agility());
+    public function getHeavyWeaponAttribute(){
+        return $this->fightStatCalc($this->toughness, $this->agility);
     }
 
-    public function sophisticatedWeapon(){
-        return $this->fightStatCalc($this->agility(), $this->toughness());
+    public function getSophisticatedWeaponAttribute(){
+        return $this->fightStatCalc($this->agility, $this->toughness);
     }
 
-    public function distanceWeapon(){
-        return $this->bigStatCalc($this->StandardWeapon(), $this->perception());
+    public function getDistanceWeaponAttribute(){
+        return $this->bigStatCalc($this->StandardWeapon, $this->perception);
     }
     
-    public function dodge(){
-        return $this->fightStatCalc($this->agility(), $this->Perceptiveness);
+    public function getDodgeAttribute(){
+        return $this->fightStatCalc($this->agility, $this->perceptiveness);
     }
 
-    public function block(){
-        return ((($this->Stamina * 2)+($this->Strength *2)+$this->agility())/5);
+    public function getBlockAttribute(){
+        return statRound(((($this->stamina + $this->strength )*2)+$this->agility)/5);
     }
 
-    public function parry(){
-        return ((($this->Stamina * 2)+ $this->Quickness + $this->Dexterity)/4);
+    public function getParryAttribute(){
+        return statRound((($this->stamina * 2)+ $this->quickness + $this->dexterity)/4);
     }
 
     // HELPERS
 
     protected function bigStatCalc($stat1, $stat2){
-        return round(($stat1 + $stat2)/2, 2);
+        return statRound(($stat1 + $stat2)/2);
     }
 
     protected function fightStatCalc($stat1, $stat2){
-        return round((($stat1 *2)+ $stat2)/3,2);
+        return statRound((($stat1 *2)+ $stat2)/3);
+    }
+    
+    protected function statRound($stat){
+        return round($stat, 2);
     }
 }
