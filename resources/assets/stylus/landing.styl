@@ -3,7 +3,7 @@
 
 $theme := {
   primary: $blue.darken-2
-  accent: $blue.accent-2
+  accent: $light-blue.accent-2
   secondary: $grey.darken-3
   info: $blue.base
   warning: $amber.base
@@ -13,10 +13,19 @@ $theme := {
 
 @require '../../../node_modules/vuetify/src/stylus/main'
 
-.toolbar
-  background-color: alpha($blue-grey.darken-3, 0.8) !important
-  margin-left: -1rem;
-  width: 100vmax;
+.application{
+  display: flex;
+  flex-direction: column;
 
-.toolbar .btn.flat
-  background: none;
+  main{
+    flex-grow: 1;
+  }
+}
+.toolbar{
+  background-color: alpha($blue-grey.darken-3, 0.8) !important
+  margin: 0 -1rem;
+  width: 100vw;
+  .btn.flat{
+    background: none;
+  }
+}

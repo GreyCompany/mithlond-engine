@@ -1,14 +1,5 @@
-<section>
-  <v-parallax :src="scaledImageLink('banner.jpg')" height="300">
-    <v-layout
-        column
-        align-center
-        justify-center
-        class="white--text"
-    >
-      <h1 class="white--text mb-2 display-3">Mithlond Engine</h1>
-      <div class="headline mb-3 text-xs-center">Czy odważysz się wypłynąć?</div>
-    </v-layout>
+<header class="elevation-2">
+  <v-parallax src="images/banner.jpg" height="300">
     <v-toolbar>
       <v-toolbar-side-icon class="hidden-md-and-up"></v-toolbar-side-icon>
       <v-toolbar-items class="hidden-sm-and-down">
@@ -17,7 +8,7 @@
         <v-btn class="flat transparent elevation-0" href="{{ route('landing.rules') }}">Regulamin</v-btn>
         <v-btn class="flat transparent elevation-0" href="#">Kontakt</v-btn>
       </v-toolbar-items>
-      <v-spacer></v-spacer>
+      <v-spacer style="min-width: 0;"></v-spacer>
       <v-toolbar-items>
         <v-btn class="flat transparent elevation-0" href="{{ route('login') }}">
           <v-icon>mdi-account-key</v-icon>
@@ -29,5 +20,14 @@
         </v-btn>
       </v-toolbar-items>
     </v-toolbar>
+    <v-layout
+        column
+        align-center
+        justify-center
+        class="white--text"
+    >
+      <h1 class="white--text mb-2 display-3">Mithlond Engine</h1>
+      <div class="headline mb-3 text-xs-center">Czy odważysz się wypłynąć?</div>
+    </v-layout>
   </v-parallax>
-</section>
+</header>
