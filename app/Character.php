@@ -23,6 +23,9 @@ class Character extends Model
     public function CharacterStats(){
         return $this->hasOne('App/Character/Stats', 'Character_id');
     }
+    public function CharacterProfiles(){
+        return $this->hasOne('App/Character/Profile', 'Character_id');
+    }
 
 
     // 

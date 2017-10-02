@@ -30,4 +30,7 @@ class User extends Authenticatable
     public function Characters(){
         return $this->hasMany('App\Character', 'user_id');
     }
+    public function Messages(){
+        return $this->hasMany('App\Message', 'author_id');
+    }
 }
