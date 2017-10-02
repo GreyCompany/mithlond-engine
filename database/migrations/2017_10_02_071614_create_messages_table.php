@@ -21,7 +21,8 @@ class CreateMessagesTable extends Migration
             ->references('id')->on('users')
             ->onDelete('cascade');
             $table->mediumText('content');
-            $table->boolean('is_read');
+            $table->boolean('is_read')
+            ->default(false);
             $table->timestamps();
         });
     }
