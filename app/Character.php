@@ -20,6 +20,10 @@ class Character extends Model
         return $this->belongsTo('App/Character/Profession');
     }
 
+    public function origin(){
+        return $this->belongsTo('App/Character/Origin');
+    }
+
     public function CharacterStats(){
         return $this->hasOne('App/Character/Stats', 'Character_id');
     }

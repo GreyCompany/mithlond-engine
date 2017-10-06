@@ -23,13 +23,17 @@ class CreateCharactersTable extends Migration
             $table->string('name')->unique();
             $table->string('family_name');
             $table->unsignedInteger('experience');
-            $table->unsignedSmallInteger('race');
-            $table->foreign('race')
+            $table->unsignedSmallInteger('race_id');
+            $table->foreign('race_id')
             ->references('id')->on('races')
             ->onDelete('cascade');
-            $table->unsignedSmallInteger('profession');
-            $table->foreign('profession')
+            $table->unsignedSmallInteger('profession_id');
+            $table->foreign('profession_id')
             ->references('id')->on('professions')
+            ->onDelete('cascade');
+            $table->unsignedSmallInteger('origin_id');
+            $table->foreign('origin_id')
+            ->references('id')->on('origins')
             ->onDelete('cascade');
             $table->timestamps();
         });
