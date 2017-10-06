@@ -17,9 +17,6 @@ class CreateMessagesTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('author_id')
             ->unique();
-            $table->foreign('author_id')
-            ->references('id')->on('users')
-            ->onDelete('cascade');
             $table->mediumText('content');
             $table->boolean('is_read')
             ->default(false);

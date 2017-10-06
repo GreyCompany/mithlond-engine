@@ -17,9 +17,6 @@ class CreateProfilesTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('character_id')
             ->unique();
-            $table->foreign('character_id')
-            ->references('id')->on('characters')
-            ->onDelete('cascade');
             $table->string('tab_name');
             $table->text('tab_content');
             $table->unsignedSmallInteger('tab_order');

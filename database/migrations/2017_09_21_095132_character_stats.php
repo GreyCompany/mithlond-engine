@@ -17,9 +17,6 @@ class CharacterStats extends Migration
             $table->increments('id');
             $table->unsignedInteger('character_id')
             ->unique();
-            $table->foreign('character_id')
-            ->references('id')->on('characters')
-            ->onDelete('cascade');
             $table->unsignedSmallInteger('strength');
             $table->unsignedSmallInteger('stamina');
             $table->unsignedSmallInteger('quickness');
