@@ -1,12 +1,16 @@
 @extends('layout.landing')
 
 @section('content')
-  <div class="col m12">
-    <article class="card">
-      <header class="card-title"><h1>Regulamin</h1></header>
-      <div class="card-content">
+  <v-flex xs12 xl8>
+    <v-card>
+      <v-card-title primary-title>
+        <div>
+          <h3 class="headline mb-0">Regulamin</h3>
+        </div>
+      </v-card-title>
+      <div class="px-3 pb-1">
         {{ $rules }}
       </div>
-    </article>
-  </div>
+    </v-card>
+  </v-flex>
 @endsection

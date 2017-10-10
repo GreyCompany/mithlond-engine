@@ -39,16 +39,8 @@
         </section>
       </main>
 
-      <v-footer>
-        <v-layout row wrap align-center>
-          <v-flex xs12>
-            <div class="ml-3">
-              &copy; 2017 <a href="#">GreyCompany</a>
-            </div>
-          </v-flex>
-        </v-layout>
-      </v-footer>
 
+    @include('layout.landing.footer')
     </v-app>
 
     <script src="{{ asset('js/vendor.js') }}"></script>
