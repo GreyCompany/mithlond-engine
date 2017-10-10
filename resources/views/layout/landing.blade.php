@@ -13,29 +13,18 @@
   </head>
   <body>
     <v-app id="app" dark>
-      {{--@include('layout.landing.header')--}}
-      {{--<main class="container">--}}
-        {{--<div class="row">--}}
-        {{--</div>--}}
-      {{--</main>--}}
-      {{--<footer class="page-footer">--}}
-        {{--<div class="container"></div>--}}
-        {{--<div class="footer-copyright">--}}
-          {{--<div class="container"></div>--}}
-        {{--</div>--}}
-      {{--</footer>--}}
 
       @include('layout.landing.header')
       <main>
         <section>
-          <v-layout
+          <v-container
               column
               wrap
               class="container my-2"
               align-center
           >
             @yield('content')
-          </v-layout>
+          </v-container>
         </section>
       </main>
 
